@@ -1,3 +1,3 @@
 export function BackGround() {
-  return <div className="fixed inset-0 bg-wave-gradient" />;
+  return <div className="absolute inset-0 bg-wave-gradient" />;
 }

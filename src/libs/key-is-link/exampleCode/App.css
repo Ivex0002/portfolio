@@ -1,7 +1,6 @@
 .background {
   display: flex;
   flex-direction: column;
-  height: 80%;
-  width: 20rem;
+  flex: 1;
   margin: auto;
 }

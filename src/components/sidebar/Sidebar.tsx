@@ -19,9 +19,9 @@ export function Sidebar() {
     };
   }, []);
   return (
-    <>
-      <SidebarContent isMouseLeft={isMouseLeft} />
+    <div className="target h-screen flex items-center">
       <SidebarHint isMouseLeft={isMouseLeft} />
-    </>
+      <SidebarContent isMouseLeft={isMouseLeft} />
+    </div>
   );
 }

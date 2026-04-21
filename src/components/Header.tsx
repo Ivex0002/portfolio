@@ -1,4 +1,6 @@
 import { FloatingBox } from "vive-floating-box";
+import githubIcon from "../asset/github.png";
+import { size } from "../util/size";
 
 export function Header() {
   return (
@@ -7,11 +9,12 @@ export function Header() {
         <Title />
         <FloatingBox onlyActiveHover={true}>
           <a
-            className="flex h-14 bg-amber-50 items-center justify-between p-1 rounded-[28px] cursor-pointer"
+            className="flex h-14 bg-amber-50 items-center w-63 justify-between p-1 rounded-[28px] cursor-pointer"
             title="git_link:ivex0002"
             href="https://github.com/Ivex0002"
             target="_blank"
           >
+            <GitIcon />
             <Logo />
             <span className="text-2xl font-bold mb-1.5 mx-3">garam_kim</span>
           </a>
@@ -21,12 +24,23 @@ export function Header() {
   );
 }
 
+const LOGO_SIZE = 12;
 function Logo() {
   return (
     <img
       src="https://github.com/ivex0002.png"
       alt="logo"
-      className="w-12 h-12 rounded-full"
+      className={`${size(LOGO_SIZE)} rounded-full`}
+    />
+  );
+}
+
+function GitIcon() {
+  return (
+    <img
+      src={githubIcon}
+      alt="github icon"
+      className={`${size(LOGO_SIZE)} rounded-full`}
     />
   );
 }

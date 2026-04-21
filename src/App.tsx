@@ -7,12 +7,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<MainLayout />}>
-          {Object.values(route).map(({ path, component: Component }) => (
+          {route.map(({ path, component: Component }) => (
             <Route key={path} path={path} element={<Component />} />
           ))}
-          {/* <Route path="/stack-modal" element={<StackModal />} />
-          <Route path="/stripe-art" element={<StripeArt />} />
-          <Route path="/vive-floating-box" element={<ViveFloatingBox />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>

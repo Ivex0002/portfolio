@@ -6,6 +6,8 @@ import ViteConfigCode from "./exampleCode/vite.config?raw";
 import TwFmExampleCode from "./exampleCode/examples/custom/TwFmExample.tsx?raw";
 import TwfmModalPresetExampleCode from "./exampleCode/examples/custom/twfmModalPresetExample.tsx?raw";
 import PresetExampleCode from "./exampleCode/examples/preset/presetExample.tsx?raw";
+import ExampleModalsCode from "./exampleCode/examples/preset/exampleModals.tsx?raw";
+import ModalStoreCode from "./exampleCode/examples/preset/modalStore.tsx?raw";
 import StylesCode from "./exampleCode/examples/preset/styles.ts?raw";
 
 import { MySandpack } from "../../components/MySandpack";
@@ -13,7 +15,19 @@ import { MySandpack } from "../../components/MySandpack";
 export function StackModal() {
   return (
     <MySandpack
-      options={{ externalResources: ["https://cdn.tailwindcss.com"] }}
+      options={{
+        externalResources: ["https://cdn.tailwindcss.com"],
+        activeFile: "/App.tsx",
+        visibleFiles: [
+          "/App.tsx",
+          "/examples/custom/TwFmExample.tsx",
+          "/examples/custom/twfmModalPresetExample.tsx",
+          "/examples/preset/presetExample.tsx",
+          "/examples/preset/exampleModals.tsx",
+          "/examples/preset/modalStore.tsx",
+          "/examples/preset/styles.ts",
+        ],
+      }}
       customSetup={{
         entry: "/main.tsx",
         dependencies: {
@@ -48,6 +62,12 @@ export function StackModal() {
         },
         "/examples/preset/presetExample.tsx": {
           code: PresetExampleCode,
+        },
+        "/examples/preset/exampleModals.tsx": {
+          code: ExampleModalsCode,
+        },
+        "/examples/preset/modalStore.tsx": {
+          code: ModalStoreCode,
         },
         "/examples/preset/styles.ts": {
           code: StylesCode,

@@ -19,7 +19,7 @@
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.11.0",
     "stack-modal": "^1.0.0",
-    "stripe-art": "^1.0.3",
+    "stripe-art": "^1.0.4",
     "tailwindcss": "^4.1.18",
     "vive-floating-box": "^1.1.3"
   },

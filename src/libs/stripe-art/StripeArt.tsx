@@ -23,6 +23,10 @@ export function StripeArt() {
           "stripe-art": "^1.0.4",
         },
       }}
+      options={{
+        activeFile: "/Background.tsx",
+        visibleFiles: ["/Background.tsx"],
+      }}
       files={{
         "/App.tsx": {
           code: AppCode,

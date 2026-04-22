@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.20.0",
+    "@ivex0002/stack-modal": "^1.0.4",
+    "@ivex0002/stack-modal-presets": "^1.0.4",
     "@tailwindcss/vite": "^4.1.18",
     "axios": "^1.13.2",
     "framer-motion": "^12.23.26",

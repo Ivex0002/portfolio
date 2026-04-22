@@ -17,8 +17,10 @@ const presets = {
 
 type PresetKey = keyof typeof presets;
 
+type StackModalType = ReturnType<typeof createStackModal<typeof exampleModals>>;
+
 type State = {
-  modal: ReturnType<typeof createStackModal>;
+  modal: StackModalType;
   currentPreset: PresetKey;
 };
 
@@ -31,7 +33,7 @@ function getState(): State {
       modal: createStackModal(exampleModals, presets.default),
     };
   }
-  return state;
+  return state as State;
 }
 
 const listeners = new Set<() => void>();

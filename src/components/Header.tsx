@@ -1,6 +1,5 @@
 import { FloatingBox } from "vive-floating-box";
 import githubIcon from "../asset/github.png";
-import { size } from "../util/size";
 
 export function Header() {
   return (
@@ -24,24 +23,18 @@ export function Header() {
   );
 }
 
-const LOGO_SIZE = 12;
 function Logo() {
   return (
     <img
       src="https://github.com/ivex0002.png"
       alt="logo"
-      className={`${size(LOGO_SIZE)} rounded-full`}
+      className="size-12 rounded-full"
     />
   );
 }
-
 function GitIcon() {
   return (
-    <img
-      src={githubIcon}
-      alt="github icon"
-      className={`${size(LOGO_SIZE)} rounded-full`}
-    />
+    <img src={githubIcon} alt="github icon" className="size-12 rounded-full" />
   );
 }
 function Title() {

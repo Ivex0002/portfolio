@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { SIDEBAR_MARGIN, type SidebarProps } from "./sidebarConfig";
 import menuIcon from "../../asset/menu.png";
-import { size } from "../../util/size";
 
 export function SidebarHint({ isMouseLeft }: SidebarProps) {
   return (
@@ -21,7 +20,6 @@ export function SidebarHint({ isMouseLeft }: SidebarProps) {
   );
 }
 
-const HINT_SIZE = 12;
 function HintIcon() {
-  return <img src={menuIcon} className={size(HINT_SIZE)} />;
+  return <img src={menuIcon} className="size-12" />;
 }

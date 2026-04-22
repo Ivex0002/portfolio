@@ -1,0 +1,27 @@
+.example-child {
+  height: 10rem;
+  width: 20rem;
+  background-color: #ffffff49;
+  border: 1px solid #00000049;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(135deg, #f3ca90c0, #4678b9c8);
+  background-size: 150% 150%;
+  animation: wave-gradient 10s ease infinite;
+}
+.container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  padding: 4rem;
+  gap: 2rem;
+}

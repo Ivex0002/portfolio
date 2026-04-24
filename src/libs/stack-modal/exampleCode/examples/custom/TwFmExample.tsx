@@ -1,5 +1,5 @@
 import { createStackModal } from "@ivex0002/stack-modal";
-import { twfmModalLayoutExample } from "./twfmModalPresetExample";
+import { twfmModalLayoutExample } from "./twfmModalLayoutExample";
 
 const twfmModals = {
   all: () => <All />,

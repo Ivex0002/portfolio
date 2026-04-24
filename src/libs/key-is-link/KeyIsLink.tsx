@@ -1,15 +1,29 @@
+import MainCode from "./exampleCode/main.tsx?raw";
 import AppCode from "./exampleCode/App.tsx?raw";
 import AppCssCode from "./exampleCode/App.css?raw";
 import ApiCode from "./exampleCode/api?raw";
 import ReqFnCode from "./exampleCode/reqFn?raw";
 import TypeLinkCode from "./exampleCode/typeLink?raw";
+import BaseComponentsCode from "./exampleCode/base_components.tsx?raw";
+import ReqComponentsCode from "./exampleCode/req_components.tsx?raw";
 import { MySandpack } from "../../components/MySandpack";
 
 export function KeyIsLink() {
   return (
     <MySandpack
+      options={{
+        activeFile: "/App.tsx",
+        visibleFiles: [
+          "/App.tsx",
+          "/typeLink.ts",
+          "/req_components.tsx",
+          "/base_components.tsx",
+          "/reqFn.ts",
+          "/api.ts",
+        ],
+      }}
       customSetup={{
-        entry: "/App.tsx",
+        entry: "/main.tsx",
         dependencies: {
           "key-is-link": "1.0.131",
           axios: "1.13.2",
@@ -18,6 +32,9 @@ export function KeyIsLink() {
         },
       }}
       files={{
+        "/main.tsx": {
+          code: MainCode,
+        },
         "/App.tsx": {
           code: AppCode,
         },
@@ -32,6 +49,12 @@ export function KeyIsLink() {
         },
         "/typeLink.ts": {
           code: TypeLinkCode,
+        },
+        "/base_components.tsx": {
+          code: BaseComponentsCode,
+        },
+        "/req_components.tsx": {
+          code: ReqComponentsCode,
         },
       }}
     />

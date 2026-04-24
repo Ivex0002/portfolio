@@ -6,7 +6,7 @@ import axios, {
 } from "axios";
 
 const axiosClient: AxiosInstance = axios.create({
-  baseURL: "https://pokeapi.co",
+  baseURL: "https://jsonplaceholder.typicode.com",
   headers: {
     "Content-Type": "application/json",
   },
@@ -17,7 +17,7 @@ export async function requestFn<Req, Res>(
   url: string,
   method: Method,
   data?: Req,
-  config?: AxiosRequestConfig
+  config?: AxiosRequestConfig,
 ): Promise<Res> {
   const requestConfig: AxiosRequestConfig = {
     url,

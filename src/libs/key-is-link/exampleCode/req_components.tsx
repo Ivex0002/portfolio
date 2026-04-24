@@ -9,14 +9,14 @@ import {
 
 export function GetAllPosts() {
   return (
-    <WidgetWrapper label="GetAllPosts">
+    <WidgetWrapper title="GetAllPosts">
       <ReqWidget reqFn={() => myApi.posts.GET()} />
     </WidgetWrapper>
   );
 }
 export function CreatePost() {
   return (
-    <WidgetWrapper label="CreatePost">
+    <WidgetWrapper title="CreatePost">
       <BodyWidget
         reqFn={(body) => myApi.posts.POST(body)}
         initialBody={{
@@ -30,21 +30,21 @@ export function CreatePost() {
 }
 export function GetOnePost() {
   return (
-    <WidgetWrapper label="GetOnePost">
+    <WidgetWrapper title="GetOnePost">
       <IdWidget reqFn={(id) => myApi.posts(id).GET()} />
     </WidgetWrapper>
   );
 }
 export function GetPostComments() {
   return (
-    <WidgetWrapper label="GetPostComments">
+    <WidgetWrapper title="GetPostComments">
       <IdWidget reqFn={(id) => myApi.posts(id).comments.GET()} />
     </WidgetWrapper>
   );
 }
 export function PutPost() {
   return (
-    <WidgetWrapper label="PutPost">
+    <WidgetWrapper title="PutPost">
       <BodyWithIdWidget
         reqFn={(id, body) => myApi.posts(id).PUT(body)}
         initialBody={{
@@ -58,7 +58,7 @@ export function PutPost() {
 }
 export function PatchPost() {
   return (
-    <WidgetWrapper label="PatchPost">
+    <WidgetWrapper title="PatchPost">
       <BodyWithIdWidget
         reqFn={(id, body) => myApi.posts(id).PATCH(body)}
         initialBody={{
@@ -70,7 +70,7 @@ export function PatchPost() {
 }
 export function DELETEPost() {
   return (
-    <WidgetWrapper label="DELETEPost">
+    <WidgetWrapper title="DELETEPost">
       <IdWidget reqFn={(id) => myApi.posts(id).DELETE()} />
     </WidgetWrapper>
   );

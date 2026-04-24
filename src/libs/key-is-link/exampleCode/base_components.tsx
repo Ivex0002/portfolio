@@ -2,13 +2,13 @@ import { useState, type ReactNode } from "react";
 import type { PostForm } from "./typeLink";
 
 interface WidgetWrapperProps {
-  label: string;
+  title: string;
   children: ReactNode;
 }
-export function WidgetWrapper({ label, children }: WidgetWrapperProps) {
+export function WidgetWrapper({ title, children }: WidgetWrapperProps) {
   return (
     <div className="widget-wrapper">
-      <h4 style={{ marginBottom: "10px", color: "#333" }}>{label}</h4>
+      <h4 style={{ marginBottom: "10px", color: "#333" }}>{title}</h4>
       {children}
     </div>
   );

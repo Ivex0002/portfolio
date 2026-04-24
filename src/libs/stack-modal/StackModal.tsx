@@ -4,7 +4,7 @@ import IndexCssCode from "./exampleCode/index.css?raw";
 import ViteConfigCode from "./exampleCode/vite.config?raw";
 
 import TwFmExampleCode from "./exampleCode/examples/custom/TwFmExample.tsx?raw";
-import TwfmModalPresetExampleCode from "./exampleCode/examples/custom/twfmModalPresetExample.tsx?raw";
+import TwfmModalLayoutExampleCode from "./exampleCode/examples/custom/twfmModalLayoutExample.tsx?raw";
 import PresetExampleCode from "./exampleCode/examples/preset/presetExample.tsx?raw";
 import ExampleModalsCode from "./exampleCode/examples/preset/exampleModals.tsx?raw";
 import ModalStoreCode from "./exampleCode/examples/preset/modalStore.tsx?raw";
@@ -21,7 +21,7 @@ export function StackModal() {
         visibleFiles: [
           "/App.tsx",
           "/examples/custom/TwFmExample.tsx",
-          "/examples/custom/twfmModalPresetExample.tsx",
+          "/examples/custom/twfmModalLayoutExample.tsx",
           "/examples/preset/presetExample.tsx",
           "/examples/preset/exampleModals.tsx",
           "/examples/preset/modalStore.tsx",
@@ -57,8 +57,8 @@ export function StackModal() {
         "/examples/custom/TwFmExample.tsx": {
           code: TwFmExampleCode,
         },
-        "/examples/custom/twfmModalPresetExample.tsx": {
-          code: TwfmModalPresetExampleCode,
+        "/examples/custom/twfmModalLayoutExample.tsx": {
+          code: TwfmModalLayoutExampleCode,
         },
         "/examples/preset/presetExample.tsx": {
           code: PresetExampleCode,

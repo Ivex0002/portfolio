@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { Footer } from "./Footer";
+import { Footer } from "./footer/Footer";
 import { Header } from "./Header";
 import { Sidebar } from "./sidebar/Sidebar";
 import { BackGround } from "./BackGround";
@@ -26,7 +26,7 @@ export function MainLayout() {
             </div>
           </div>
 
-          <Footer />
+          <Footer currentRoute={currentRoute} />
         </div>
       </div>
 

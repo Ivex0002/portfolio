@@ -16,7 +16,7 @@ export function LibMetaData({
         <a href={npmUrl} title={`npm_link:${npmUrl}`} target="_blank">
           <div className="blur-bg px-5 py-2 rounded-full flex flex-row items-center gap-1.5">
             <img src={npmIcon} className="w-5 h-5" />
-            <span>{name}</span>
+            <span>배포링크 : {name}</span>
           </div>
         </a>
       </FloatingBox>

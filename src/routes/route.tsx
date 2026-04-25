@@ -10,6 +10,7 @@ export interface RouteConfig {
   path: string;
   component: ComponentType;
   npmUrl?: string;
+  notionBlockId?: string;
 }
 
 export const route: RouteConfig[] = [
@@ -19,23 +20,27 @@ export const route: RouteConfig[] = [
     path: "/vive-floating-box",
     component: ViveFloatingBox,
     npmUrl: "https://www.npmjs.com/package/vive-floating-box",
+    notionBlockId: "3467b65065bc800ca7ccccb305e43bcf",
   },
   {
     name: "KeyIsLink",
     path: "/key-is-link",
     component: KeyIsLink,
     npmUrl: "https://www.npmjs.com/package/key-is-link",
+    notionBlockId: "3467b65065bc80f69a11d69cff46f655",
   },
   {
     name: "StripeArt",
     path: "/stripe-art",
     component: StripeArt,
     npmUrl: "https://www.npmjs.com/package/stripe-art",
+    notionBlockId: "3477b65065bc80c18a8cd21f4a82183f",
   },
   {
     name: "StackModal",
     path: "/stack-modal",
     component: StackModal,
     npmUrl: "https://www.npmjs.com/package/@ivex0002/stack-modal",
+    notionBlockId: "3477b65065bc808a8354dbb82ab2f45c",
   },
 ];

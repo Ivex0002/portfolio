@@ -26,7 +26,7 @@ export async function requestFn<Req, Res>(
     ...config,
   };
 
-  console.log({ requestConfig });
+  // console.log({ requestConfig });
 
   const res: AxiosResponse<Res> = await axiosClient.request<Res>(requestConfig);
   return res.data;

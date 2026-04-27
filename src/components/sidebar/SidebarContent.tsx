@@ -34,8 +34,9 @@ function SidebarButtons() {
     <>
       {route.map(({ name, path }) => (
         <motion.button
+          key={name}
           onClick={() => {
-            console.log({ path });
+            // console.log({ path });
             navi(path);
           }}
           whileHover={{ scale: 1.05 }}

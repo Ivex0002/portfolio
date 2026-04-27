@@ -7,7 +7,7 @@ export function Footer({
   currentRoute: RouteConfig | undefined;
 }) {
   return (
-    <div className="w-full pb-4 px-50">
+    <div className="w-full p-8">
       <Notion currentRoute={currentRoute} />
     </div>
   );

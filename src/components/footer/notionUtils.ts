@@ -1,5 +1,6 @@
 import type { ExtendedRecordMap } from "notion-types";
-export function normalizeNotionId(id: string) {
+
+function normalizeNotionId(id: string) {
   if (id.includes("-")) return id;
 
   return [
@@ -16,6 +17,7 @@ export function pickSubtree(
   rootId: string,
 ): ExtendedRecordMap {
   const pickedBlocks: ExtendedRecordMap["block"] = {};
+  const id = normalizeNotionId(rootId);
 
   function dfs(id: string) {
     const record = recordMap.block[id];
@@ -30,7 +32,7 @@ export function pickSubtree(
     block.content?.forEach(dfs);
   }
 
-  dfs(rootId);
+  dfs(id);
 
   return {
     ...recordMap,

@@ -15,16 +15,10 @@ export function MainLayout() {
     <>
       <BackGround />
       <div className="absolute inset-0 overflow-x-hidden overflow-y-auto scrollbar-transparent">
-        <div className="flex flex-col w-screen">
-          <div className="w-full h-screen pb-4 px-50">
-            <div className="flex flex-col min-w-250">
-              <Header />
-              <LibMetaData currentRoute={currentRoute} />
-              <div className="flex-1 overflow-hidden">
-                <Outlet />
-              </div>
-            </div>
-          </div>
+        <div className="flex flex-col w-screen pb-4 px-50 min-w-400">
+          <Header />
+          <LibMetaData currentRoute={currentRoute} />
+          <Outlet />
 
           <Footer currentRoute={currentRoute} />
         </div>

@@ -63,3 +63,7 @@ body {
   border-radius: 0.5rem;
   @apply scrollbar-custom;
 }
+
+.notion-callout {
+  background-color: #ffffff8e !important;
+}

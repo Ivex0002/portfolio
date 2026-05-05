@@ -1,26 +1,35 @@
 import { MySandpack } from "../../components/MySandpack";
-import AppCode from "./exampleCode/App?raw";
-import AppCssCode from "./exampleCode/App.css?raw";
+import { useEffect, useState } from "react";
+import type { SandpackProps } from "@codesandbox/sandpack-react";
+import { SPOptions_ViveFloatingBox } from "./files.for.sandpack";
 
 export function ViveFloatingBox() {
-  return (
-    <MySandpack
-      customSetup={{
-        entry: "/App.tsx",
-        dependencies: {
-          "vive-floating-box": "^1.1.3",
-          react: "^19.2.0",
-          "react-dom": "^19.2.0",
-        },
-      }}
-      files={{
-        "/App.tsx": {
-          code: AppCode,
-        },
-        "/App.css": {
-          code: AppCssCode,
-        },
-      }}
-    />
+  const [sandpackOption, setSandpackOption] = useState<SandpackProps | null>(
+    null,
   );
+
+  useEffect(() => {
+    (async () => {
+      const sandpackOption = await SPOptions_ViveFloatingBox.create({
+        options: {
+          activeFile: "/App.tsx",
+          visibleFiles: ["/App.tsx", "/App.css"],
+        },
+        customSetup: {
+          entry: "/App.tsx",
+          dependencies: {
+            "vive-floating-box": "^1.1.3",
+            react: "^19.2.0",
+            "react-dom": "^19.2.0",
+          },
+        },
+      });
+
+      setSandpackOption(sandpackOption);
+    })();
+  }, []);
+
+  if (!sandpackOption) return;
+
+  return <MySandpack {...sandpackOption} />;
 }

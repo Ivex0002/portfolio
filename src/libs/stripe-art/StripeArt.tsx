@@ -1,6 +1,8 @@
 import { MySandpack } from "../../components/MySandpack";
 import AppCode from "./exampleCode/App.tsx?raw";
 import BGCode from "./exampleCode/Background?raw";
+import StripeLayerCode from "./exampleCode/StripeLayer?raw";
+import imagesCode from "./exampleCode/images?raw";
 
 // sandpack에서 dependencies로 StripeArt 못읽어옴
 // >> dist 파일 통째로 던져주기
@@ -24,8 +26,13 @@ export function StripeArt() {
         },
       }}
       options={{
-        activeFile: "/Background.tsx",
-        visibleFiles: ["/Background.tsx"],
+        activeFile: "/StripeLayer.tsx",
+        visibleFiles: [
+          "/App.tsx",
+          "/Background.tsx",
+          "/StripeLayer.tsx",
+          "/images.ts",
+        ],
       }}
       files={{
         "/App.tsx": {
@@ -34,6 +41,8 @@ export function StripeArt() {
         "/Background.tsx": {
           code: BGCode,
         },
+        "/StripeLayer.tsx": { code: StripeLayerCode },
+        "/images.ts": { code: imagesCode },
         "/assets/imgs.ts": {
           code: `
             export const img1 = "${img1Base64.trim()}";

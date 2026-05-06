@@ -3,7 +3,7 @@ import { type SandpackProps } from "@codesandbox/sandpack-react";
 type FileNames = "/App.css" | "/App.tsx";
 
 type StrictOptions = Omit<
-  SandpackProps["options"],
+  NonNullable<SandpackProps["options"]>,
   "activeFile" | "visibleFiles"
 > & {
   activeFile?: FileNames;
@@ -30,20 +30,24 @@ async function createSandpackOptions(
 }
 
 // raw files for runtime
-const modules = import.meta.glob<string>("./exampleCode/*", {
+const modules = import.meta.glob<string>("./exampleCode/**/*", {
   query: "?raw",
   import: "default",
 });
 
 async function getRawFiles() {
-  const files = {} as Record<FileNames, string>;
+  const ROOT = "./exampleCode";
+  const entries = Object.entries(modules);
 
-  for (const [path, loader] of Object.entries(modules)) {
-    const name = path.split("/").pop() as FileNames;
+  const loaded = await Promise.all(
+    entries.map(async ([path, loader]) => {
+      const name = path.slice(ROOT.length) as FileNames;
+      const code = await loader();
 
-    files[name] = await loader();
-  }
+      return [name, code] as const;
+    }),
+  );
 
-  return files;
+  return Object.fromEntries(loaded) as Record<FileNames, string>;
 }
 

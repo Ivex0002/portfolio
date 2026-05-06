@@ -37,14 +37,17 @@ const modules = import.meta.glob<string>("./exampleCode/**/*", {
 
 async function getRawFiles() {
   const ROOT = "./exampleCode";
-  const files = {} as Record<FileNames, string>;
+  const entries = Object.entries(modules);
 
-  for (const [path, loader] of Object.entries(modules)) {
-    const name = path.slice(ROOT.length) as FileNames;
+  const loaded = await Promise.all(
+    entries.map(async ([path, loader]) => {
+      const name = path.slice(ROOT.length) as FileNames;
+      const code = await loader();
 
-    files[name] = await loader();
-  }
+      return [name, code] as const;
+    }),
+  );
 
-  return files;
+  return Object.fromEntries(loaded) as Record<FileNames, string>;
 }
 

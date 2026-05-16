@@ -1,9 +1,10 @@
 import type { ComponentType } from "react";
 import { KeyIsLink } from "../libs/key-is-link/KeyIsLink";
-import { Home } from "../pages/Home";
+import { Home } from "../components/Home";
 import { ViveFloatingBox } from "../libs/vive-floating-box/ViveFloatingBox";
 import { StripeArt } from "../libs/stripe-art/StripeArt";
 import { StackModal } from "../libs/stack-modal/StackModal";
+import { ViveStarryNight } from "../libs/vive-starry-night/ViveStarryNight";
 
 export interface RouteConfig {
   name: string;
@@ -42,5 +43,11 @@ export const route: RouteConfig[] = [
     component: StackModal,
     npmUrl: "https://www.npmjs.com/package/@ivex0002/stack-modal",
     notionBlockId: "3477b65065bc808a8354dbb82ab2f45c",
+  },
+  {
+    name: "ViveStarryNight",
+    path: "/vive-starry-night",
+    component: ViveStarryNight,
+    npmUrl: "https://www.npmjs.com/package/vive-starry-night",
   },
 ];

@@ -1,0 +1,53 @@
+import { type SandpackProps } from "@codesandbox/sandpack-react";
+
+type FileNames = "/App.tsx" | "/asset/img1.txt" | "/asset/img2.txt" | "/customShape.ts" | "/main.tsx" | "/starConfigs.ts";
+
+type StrictOptions = Omit<
+  NonNullable<SandpackProps["options"]>,
+  "activeFile" | "visibleFiles"
+> & {
+  activeFile?: FileNames;
+  visibleFiles?: FileNames[];
+};
+
+type StrictSandpackProps = Omit<SandpackProps, "options"> & {
+  options?: StrictOptions;
+};
+
+// create Sandpack options with auto complete
+export const SPOptions_ViveStarryNight = {
+  create : createSandpackOptions
+}
+
+async function createSandpackOptions(
+  props?: StrictSandpackProps,
+): Promise<SandpackProps> {
+  const files = await getRawFiles();
+  return {
+    ...props,
+    files: files,
+  };
+}
+
+// raw files for runtime
+const modules = import.meta.glob<string>("./exampleCode/**/*", {
+  query: "?raw",
+  import: "default",
+});
+
+async function getRawFiles() {
+  const ROOT = "./exampleCode";
+  const entries = Object.entries(modules);
+
+  const loaded = await Promise.all(
+    entries.map(async ([path, loader]) => {
+      const name = path.slice(ROOT.length) as FileNames;
+      const code = await loader();
+
+      return [name, code] as const;
+    }),
+  );
+
+  return Object.fromEntries(loaded) as Record<FileNames, string>;
+}
+

@@ -22,7 +22,6 @@ export async function getNotionDoc() {
   if (state.initialized) return;
 
   const { data } = await axios.get<ExtendedRecordMap>("/api/notion");
-  // console.log(data);
 
   state = {
     recordMap: data,

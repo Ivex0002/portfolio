@@ -24,7 +24,6 @@ export function pickSubtree(
     if (!record) return;
 
     pickedBlocks[id] = record;
-    // console.log({ pickedBlocks });
 
     const raw = record.value;
     const block = "role" in raw && "value" in raw ? raw.value : raw;

@@ -19,7 +19,6 @@ export function Notion({
     if (!currentRoute?.notionBlockId) return null;
 
     const picked = pickSubtree(recordMap, currentRoute.notionBlockId);
-    // console.log({ picked });
     return picked;
   }, [recordMap, currentRoute]);
 

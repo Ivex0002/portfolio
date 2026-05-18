@@ -8,7 +8,6 @@ const BG = {
 };
 
 export function App() {
-  console.log(img1);
   return (
     <div
       style={{

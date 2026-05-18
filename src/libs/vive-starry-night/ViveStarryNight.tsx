@@ -32,8 +32,6 @@ export function ViveStarryNight() {
         },
       });
 
-      console.log({ img1Base64 });
-
       setSandpackOption(sandpackOption);
     })();
   }, []);

@@ -49,5 +49,6 @@ export const route: RouteConfig[] = [
     path: "/vive-starry-night",
     component: ViveStarryNight,
     npmUrl: "https://www.npmjs.com/package/vive-starry-night",
+    notionBlockId: "3647b65065bc80839f89d34e49f6fab1",
   },
 ];

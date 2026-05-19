@@ -25,7 +25,7 @@ export function ViveStarryNight() {
         customSetup: {
           entry: "/main.tsx",
           dependencies: {
-            "vive-starry-night": "^0.0.3",
+            "vive-starry-night": "^0.0.6",
             react: "^19.2.0",
             "react-dom": "^19.2.0",
           },
